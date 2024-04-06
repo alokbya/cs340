@@ -1,5 +1,8 @@
 # Databases
 
+Check out the current deployment (requires VPN).
+http://classwork.engr.oregonstate.edu:49204/
+
 ### Connecting to Flipper (OSU Servers)
 1. Connect to the VPN.
     - Launch Cisco AnyConnect Secure Mobility Client (MacOS)
