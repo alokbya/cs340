@@ -19,3 +19,14 @@
 ```
 >> use cs340_alokbya
 ```
+
+## Starting the app
+Make sure that we are using 'forever' in order to allow this app to run when the SSH connection drops.
+```
+alias forever='./node_modules/forever/bin/forever'
+```
+
+Start the app.
+```
+forever start app.js
+```
