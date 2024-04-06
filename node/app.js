@@ -35,7 +35,7 @@ app.get('/', function(req, res)
                 db.pool.query(query4, function(err, results, fields){
 
                     // Send the results to the browser
-                    let base = "<h1>MySQL Results:</h1>"
+                    let base = "<h1>MySQL Results (alaaddin):</h1>"
                     res.send(base + JSON.stringify(results));
                 });
             });
