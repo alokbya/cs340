@@ -33,3 +33,19 @@ Start the app.
 ```
 forever start app.js
 ```
+
+## Stopping the app
+Ensure alias is still valid, and run the following.
+```
+forever stop app.js
+```
+
+If there are issues with that, and the web server is stil running, list the processes and terminate the correct one.
+```
+forever list
+```
+
+For example, stop process 0.
+```
+forever stop 0
+```
