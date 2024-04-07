@@ -49,3 +49,6 @@ For example, stop process 0.
 ```
 forever stop 0
 ```
+
+## Resources
+* (Project Guidelines)[https://canvas.oregonstate.edu/courses/1958399/pages/cs340-project-guide?module_item_id=24181792]
