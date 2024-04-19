@@ -50,12 +50,12 @@ VALUES
     ('210NET30', '2% discount in 10 days Net 30');
 
 -- Insert data into Invoices table
-INSERT INTO Invoices (CustomerID, InvoiceDate, TotalDue, TermsCodeID)
+INSERT INTO Invoices (CustomerID, InvoiceDate, TermsCodeID, TotalDue)
 VALUES
-    ('2', 2014-02-07, 2388.98, 'NET30'),
-    ('1', 2014-02-02, 2443.35, '210NET30'),
-    ('1', 2014-02-09, 8752.32, 'NET30');
-
+    (2, '2014-02-07', 'NET30', 2388.98),
+    (1, '2014-02-02', '210NET30', 2443.35),
+    (1, '2014-02-09', 'NET30', 8752.32);
+    
 -- Select all records from Customers
 SELECT * FROM Customers;
 
@@ -67,4 +67,3 @@ SHOW TABLES;
 
 -- Describe the structure of Customers table
 DESCRIBE Customers;
-
