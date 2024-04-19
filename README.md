@@ -10,7 +10,6 @@ http://classwork.engr.oregonstate.edu:49204/
 2. SSH into Flipper
     - `>> ssh alokbya@classwork.engr.oregonstate.edu`
 
-
 ### Connect to MySQL Server MariaDB on `classmysql.engr.oregonstate.edu`
 1. From Flipper
 ```
@@ -21,6 +20,12 @@ http://classwork.engr.oregonstate.edu:49204/
 2. Use correct "class database"
 ```
 >> use cs340_alokbya
+```
+
+### Backing up the database
+Run the following command in the directory you want to save the `backup.sql` file into.
+```
+mysqldump -u cs340_alokbya -h classmysql.engr.oregonstate.edu -p cs340_alokbya > backup.sql
 ```
 
 ## Starting the app
