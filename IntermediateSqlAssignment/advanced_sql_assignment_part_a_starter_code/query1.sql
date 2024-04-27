@@ -1,5 +1,41 @@
 -- Write the query to create the 4 tables below.
+CREATE TABLE `client` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `first_name` varchar(255) NOT NULL,
+ `last_name` varchar(255) NOT NULL,
+ `email` varchar(255) NOT NULL,
+ PRIMARY KEY (`id`),
+ CONSTRAINT `full_name` UNIQUE (`first_name`, `last_name`)
+) ENGINE=InnoDB;
 
+CREATE TABLE `employee` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `first_name` varchar(255) NOT NULL,
+ `last_name` varchar(255) NOT NULL,
+ `start_date` date NOT NULL,
+ `email` varchar(255) NOT NULL,
+ PRIMARY KEY (`id`),
+ CONSTRAINT `full_name` UNIQUE (`first_name`, `last_name`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `project` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `title` varchar(255) NOT NULL,
+ `comments` text,
+ `cid` int(11),
+ PRIMARY KEY (`id`),
+ UNIQUE KEY `unique_title` (`title`),
+ FOREIGN KEY (`cid`) REFERENCES `client`(`id`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `works_on` (
+ `pid` int(11) NOT NULL,
+ `eid` int(11) NOT NULL,
+ `due_date` date NOT NULL,
+ PRIMARY KEY (`eid`, `pid`),
+ FOREIGN KEY (`pid`) REFERENCES `project`(`id`),
+ FOREIGN KEY (`eid`) REFERENCES `employee`(`id`)
+) ENGINE=InnoDB;
 
 
 -- Leave the queries below untouched. These are to test your submission correctly.
