@@ -45,3 +45,54 @@ Normalization forms go all the way to 6NF, but 3NF is the most commonly used. Al
   - This is a simplification of 2NF, but sufficient for our needs
   - Sometimes tables are designed without primary keys, and combinations of attributes are used to create a PK (e.g. building name + room number = PK for a *Rooms* table); in those cases you may need to deal with 2NF differently
   - For our purposes in this class, we always create a primary key to satisfy 2NF
+
+## Normalization: 3NF
+- 3NF: The table is in 2NF and no non-key attributes determine another non-key attribute of that table
+  - Also a simplification of 3NF, but sufficient for our needs
+  - In our non-normalized table, telephone number depends on hte customer, not the invoice, so it violates 3NF
+- 3NF is related to 1NF as it requires thinking further about whether the table contains one entity
+
+## Summary
+- The big idea:
+  - Reduce redundancy
+  - Design to prevent anomalies
+  - If your tables have PKs, represent a single entity and you avoid anomalies, they are 3NF and sufficiently normalized
+- Normalization comes at a price
+  - more tables increases the performance cost of running queries
+  - 3NF may not always be necessary
+  - But it s advised to go with 3NF when in doubt
+
+## Resources
+- [Database Normalization](https://en.wikipedia.org/wiki/Database_normalization)
+- [Database Normalization Video](https://www.youtube.com/watch?v=GFQaEYEc8_8&t=3s)
+
+
+## Video notes
+- When data disagrees with itself its a problem of bad-database design
+- When you normalize a database table, you structure it in a way that it can't express redundant information
+  - In a normalized table you can't have a customer's name in two places
+- Normalized tables are
+  - Easier to understand
+  - Easier to enhance and extend
+  - Protected from
+    - insertion anomalies
+    - update anomalies
+    - deletion anomalies
+- Sets of criteria to assess level of danger for database (how unnormalized a table is)
+  - 1NF: each column has a single value (min safety guarantee)
+  - 2NF: 1NF + no partial dependencies (greater safety guarantee)
+- Using row order to convery information violates 1NF
+- Mixing data types within the same column violates 1NF (db platform won't let you do it anyway)
+- A table without a primary key violates 1NF
+- Storing a repeating group of data items on a single row violates First Normal Form
+- First Normal Form Rules:
+  - Using row order to convey information is not permitted
+  - Mixing data types within the same column is not permitted
+  - A table without a primary key is not permitted
+  - repeating groups of data items on a single row is not permitted
+- 2NF is all about how a tables non key columns relate to the primary key
+- Non-Formal definition of 2NF: Each non-key attribute must depend on the *entire primary key*
+- Third Normal Form: Every non-key attribute in a table should depend on the key, the whole key, and nothing but the key
+- Boyce-Codd Normal Form: Every attribute in a table should depend on the key, eh whole key, and nothing but the key
+- Fourth Normal Form: Multivalued dependencies in a table must be multivalued dependencies on the key
+- Fifth Normal Form: The table (which must be in 4NF) cannot be describable as the logical result of joining some other tables together.
